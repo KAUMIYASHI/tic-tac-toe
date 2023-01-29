@@ -1,0 +1,12 @@
+.square {
+  background-color: rgb(32, 33, 36);
+  color: rgb(246, 241, 235);
+  font-size: 3rem;
+  border: none;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2.5rem;
+  box-shadow: rgb(136 136 136) 5px 10px;
+  cursor: pointer;
+  padding: 3rem;
+}

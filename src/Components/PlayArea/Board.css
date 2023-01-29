@@ -1,0 +1,13 @@
+.board {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.text-light {
+  color: #f6f1eb;
+}
+
+.text-dark {
+  color: #202124;
+}

@@ -1,0 +1,117 @@
+html {
+  font-size: 62.5%;
+}
+
+.player-profile {
+  border-radius: 50%;
+}
+
+.greyScale {
+  filter: grayscale(100%);
+}
+
+.greyScale_not {
+  filter: grayscale(0);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App {
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scene {
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  width: 57vw;
+  padding: 3rem 0;
+  margin-bottom: 15rem;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  background: rgb(32, 33, 36);
+  margin-right: 20px;
+  border-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  box-shadow: 5px 5px grey;
+  margin-top: 10px;
+}
+
+.box_ligth {
+  height: 150px;
+  width: 150px;
+  background: rgb(246, 241, 235);
+  margin-right: 20px;
+  border-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  box-shadow: 5px 5px grey;
+  margin-top: 10px;
+}
+
+.board {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &-section {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.history {
+  &-section {
+    flex-direction: column;
+  }
+
+  &-item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.square {
+  width: 10rem;
+  height: 10rem;
+  font-size: 3rem;
+
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+
+h2 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+}
+
+.text-light {
+  color: #f6f1eb;
+}
+
+.text-dark {
+  color: #202124;
+}

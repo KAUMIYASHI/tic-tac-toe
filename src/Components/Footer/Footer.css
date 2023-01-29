@@ -1,0 +1,28 @@
+.player {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 15%;
+  height: 20px;
+}
+
+.FooterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.song-label {
+  margin: 0 20px;
+  font-size: 2rem;
+  display: inline;
+}
+
+.text_light {
+  color: #f6f1eb;
+}
+
+.text_dark {
+  color: #202124;
+}
