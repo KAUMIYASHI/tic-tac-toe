@@ -10,7 +10,7 @@ const Modal = (props) => {
     if (props.winner === "X") {
       setWinnerName("Player1 wins the Round");
     } else if (props.winner === "0") {
-      setWinnerName("Player1 wins the Round");
+      setWinnerName("Player2 wins the Round");
     } else {
       setWinnerName("Match is Tie");
       props.setPlayer1Score(props.player1Score + 0.5);
