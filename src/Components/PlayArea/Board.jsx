@@ -166,13 +166,6 @@ const Board = ({ lightMode, ...props }) => {
           </h2>
         </div>
       </div>
-
-      {(winner || history.length === 9) && (
-        <div>
-          <button onClick={reset}>Play Again</button>
-          <button onClick={playAgain}>Continue</button>
-        </div>
-      )}
     </>
   );
 };
