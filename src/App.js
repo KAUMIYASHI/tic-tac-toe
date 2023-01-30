@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import { useEffect, useState } from "react";
 import toonavatar from "cartoon-avatar";
 import Board from "./Components/PlayArea/Board";
+import LightMode from "./context/light-mode-context";
 
 function App() {
   const [isStart, setIsStart] = useState(false);
@@ -18,19 +19,22 @@ function App() {
   }, []);
 
   return (
-    <div className={`App ${lightMode ? "App_dark" : "App_light"}`}>
-      <Header
-        setIsStart={setIsStart}
-        lightMode={lightMode}
-        setLightMode={setLightMode}
-      />
-      {!isStart ? (
-        <Home setIsStart={setIsStart} lightMode={lightMode} />
-      ) : (
-        <Board lightMode={lightMode} player1={player1} player2={player2} />
-      )}
-      <Footer lightMode={lightMode} />
-    </div>
+    <LightMode.Provider
+      value={{
+        lightMode: lightMode,
+        setLightMode: setLightMode,
+      }}
+    >
+      <div className={`App ${lightMode ? "App_dark" : "App_light"}`}>
+        <Header setIsStart={setIsStart} />
+        {!isStart ? (
+          <Home setIsStart={setIsStart} />
+        ) : (
+          <Board player1={player1} player2={player2} />
+        )}
+        <Footer />
+      </div>
+    </LightMode.Provider>
   );
 }
 

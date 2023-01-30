@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import LightMode from "../../context/light-mode-context";
+
 const Next = (props) => {
+  const theme = useContext(LightMode);
   return (
     <svg
-      fill={props.lightMode ? "#f6f1eb" : "#202124;"}
+      fill={theme.lightMode ? "#f6f1eb" : "#202124;"}
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"

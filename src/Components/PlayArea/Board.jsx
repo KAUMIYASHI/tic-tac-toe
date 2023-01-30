@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Square from "./Square";
 import { calculateWinner } from "../../utils/calculateWinner";
 import Modal from "./Modal";
 import "../PlayArea/styles.css";
+import LightMode from "../../context/light-mode-context";
 
 const Board = ({ lightMode, ...props }) => {
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -15,6 +16,8 @@ const Board = ({ lightMode, ...props }) => {
   const [player1Score, setPlayer1Score] = useState(0);
   const [player2Score, setPlayer2Score] = useState(0);
   const [showModal, setShowModal] = useState(false);
+
+  const theme = useContext(LightMode);
 
   useEffect(() => {
     if (history?.length < 4) return;
@@ -116,10 +119,10 @@ const Board = ({ lightMode, ...props }) => {
                 : "player-profile greyScale_not"
             }
           />
-          <h2 className={lightMode ? "text-light" : "text-dark"}>
+          <h2 className={theme.lightMode ? "text-light" : "text-dark"}>
             Player 1 (X)
           </h2>
-          <h2 className={lightMode ? "text-light" : "text-dark"}>
+          <h2 className={theme.lightMode ? "text-light" : "text-dark"}>
             {player1Score}
           </h2>
         </div>
@@ -130,7 +133,6 @@ const Board = ({ lightMode, ...props }) => {
                 squares.map((square, index) => {
                   return (
                     <Square
-                      lightMode={lightMode}
                       value={square}
                       onClick={() => squareHandler(index, square)}
                       disabled={winner}
@@ -158,10 +160,10 @@ const Board = ({ lightMode, ...props }) => {
                 : "player-profile greyScale_not"
             }
           />
-          <h2 className={lightMode ? "text-light" : "text-dark"}>
+          <h2 className={theme.lightMode ? "text-light" : "text-dark"}>
             Player 2 (O)
           </h2>
-          <h2 className={lightMode ? "text-light" : "text-dark"}>
+          <h2 className={theme.lightMode ? "text-light" : "text-dark"}>
             {player2Score}
           </h2>
         </div>

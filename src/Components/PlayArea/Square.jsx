@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import LightMode from "../../context/light-mode-context";
 
-const Square = ({
-  value,
-  onClick,
-  lightMode,
-  onMouseEnter,
-  onMouseLeave,
-  ...props
-}) => {
+const Square = ({ value, onClick, onMouseEnter, onMouseLeave, ...props }) => {
+  const theme = useContext(LightMode);
   const [fill, setFill] = useState({
     stroke: "white",
     fill: "none",
   });
 
   useEffect(() => {
-    if (lightMode) {
+    if (theme.lightMode) {
       setFill({
         stroke: "none",
         fill: "rgb(32, 33, 36)",
@@ -25,7 +20,7 @@ const Square = ({
         fill: " #f6f1eb",
       });
     }
-  }, [lightMode]);
+  }, [theme.lightMode]);
 
   const Cross = () => {
     return (
@@ -63,7 +58,7 @@ const Square = ({
 
   return (
     <button
-      className={lightMode ? "box_ligth" : "box"}
+      className={theme.lightMode ? "box_ligth" : "box"}
       onClick={onClick}
       {...props}
     >

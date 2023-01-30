@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Pause.css";
-const Pause = ({ onPlayerClick, ...props }) => {
+import LightMode from "../../context/light-mode-context";
+
+const Pause = ({ onPlayerClick }) => {
+  const theme = useContext(LightMode);
   return (
     <svg
       space="preserve"
-      fill={props.lightMode ? "#f6f1eb" : "#202124;"}
+      fill={theme.lightMode ? "#f6f1eb" : "#202124;"}
       className="play-pause-button"
       viewBox="0 0 60 60"
       onClick={onPlayerClick}
